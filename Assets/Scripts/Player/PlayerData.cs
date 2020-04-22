@@ -20,10 +20,9 @@ public class PlayerData : MonoBehaviourPun, IPunObservable
         }
     }
     public void TakeDamage(int amount) {
-
+        Debug.Log(Health);
         if (photonView.IsMine) {
-            photonView.RPC("Damage", RpcTarget.All, amount);
-        
+            photonView.RPC("Damage", RpcTarget.All, amount);    
         }
     }
 

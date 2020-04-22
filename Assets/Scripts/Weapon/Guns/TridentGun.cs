@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class TridentGun: Weapon
 {
-    public TridentGun() : base("Trident Gun", 20, 100, 0.5f) { }
+    [SerializeField]static int damage = 20;
+    [SerializeField] static float speed = 100f;
+    [SerializeField] static float weaponcd = 0.5f;
+    [SerializeField] static float distance = 20f;
+    public TridentGun() : base("Trident Gun", damage, speed, weaponcd, distance) { }
+    void Start()
+    {
+        
+    }
+    
     public override void WeaponStart()
     { 
     

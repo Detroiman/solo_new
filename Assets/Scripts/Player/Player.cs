@@ -36,6 +36,7 @@ public class Player : MonoBehaviourPun
 
     void FixedUpdate()
     {
+        
         deltax = joystick.Horizontal();
         deltay = joystick.Vertical();
         time = Time.deltaTime; 
