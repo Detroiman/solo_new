@@ -29,13 +29,14 @@ public class Player : MonoBehaviourPun
 
     void Start()
     {
+       
         this.name = photonView.Owner.NickName;
         cd_leap = cd_ability_leap;
         rb.position = new Vector3(0f, 0f, 0f);
     }
 
     void FixedUpdate()
-    {
+    { 
         
         deltax = joystick.Horizontal();
         deltay = joystick.Vertical();

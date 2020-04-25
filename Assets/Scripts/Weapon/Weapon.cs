@@ -28,7 +28,6 @@ public abstract class Weapon : MonoBehaviourPun
             shootDelay = 0f;
         }
        
-
     }
     [PunRPC]
     public void RPCShoot() {

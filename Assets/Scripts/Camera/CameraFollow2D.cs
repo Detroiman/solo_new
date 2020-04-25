@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Photon.Pun;
 
-public class CameraFollow2D : MonoBehaviour
+public class CameraFollow2D : MonoBehaviourPun
 {
 
 	public float damping = 1.5f;
@@ -12,6 +13,7 @@ public class CameraFollow2D : MonoBehaviour
 
 	void Start()
 	{
+		gameObject.name = PhotonNetwork.NickName + "Camera";
 		offset = new Vector2(Mathf.Abs(offset.x), offset.y);
 		FindPlayer(faceLeft);
 	}

@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviourPun
     private void Start()
     {
         time = distance / speed;
-        
+        gameObject.GetComponent<Rigidbody2D>().velocity = transform.right* speed;
         DestroyBullet(time);
     }
     public void OnTriggerEnter2D(Collider2D collision)
@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviourPun
         DestroyBullet(0f);
     }
     void DestroyBullet(float interval) {
-        Destroy(this, interval);
+        Destroy(gameObject, interval);
     }
     public void setBullet(int Damage, float Speed, float Distance)
     {

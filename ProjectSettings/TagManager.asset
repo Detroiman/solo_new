@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - FirePoint
+  - Slider
+  - Joystick
+  - Canvas
   layers:
   - Default
   - TransparentFX

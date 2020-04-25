@@ -20,8 +20,8 @@ public class PauseController : MonoBehaviourPunCallbacks
     }
 	public void buttonPause()
 	{
-
-		PhotonNetwork.LeaveRoom();
+		deactivatrExit();
+		///PhotonNetwork.LeaveRoom();
 	}
 	public void buttonExit()
 	{
