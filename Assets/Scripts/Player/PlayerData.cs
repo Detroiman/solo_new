@@ -6,17 +6,9 @@ using UnityEngine.UI;
 
 public class PlayerData : MonoBehaviourPun, IPunObservable
 {
-    public GameObject Cam;
     public Slider slider;
     public int Health;
     public int MaxHealth;
-
-    void Start() {
-        
-        Debug.Log(Cam.name);
-        slider = GameObject.FindGameObjectWithTag("Slider").GetComponent<Slider>();
-
-    }
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)
@@ -33,18 +25,17 @@ public class PlayerData : MonoBehaviourPun, IPunObservable
         Debug.Log(Health);
         if (photonView.IsMine) {
             photonView.RPC("Damage", RpcTarget.All, amount);
-            SetHealth();
-
         }
     }
 
     void Update() {
 
-       
-        if (Health <= 0) {
-            photonView.RPC("DoDeath", RpcTarget.All);
+        if (photonView.IsMine) {
+            if (Health <= 0) {
+                photonView.RPC("DoDeath", RpcTarget.All);
+            }
+            SetHealth();
         }
-        
         
     }
 
@@ -54,7 +45,7 @@ public class PlayerData : MonoBehaviourPun, IPunObservable
 
         Health -= amount;
     }
-    [PunRPC]
+
     void DoDeath() {
         gameObject.SetActive(false);
     }

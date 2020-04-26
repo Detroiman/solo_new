@@ -8,6 +8,12 @@ public class magazinecontroll : MonoBehaviour
 	public GameObject Abilities;
 	public GameObject Guns;
 	public GameObject Other;
+	public GameObject RawImGuns;
+	public GameObject Exit_guns;
+	public GameObject RawImAbilities;
+	public GameObject Exit_abilities;
+	public GameObject RawImOther;
+	public GameObject Exit_other;
     void Start()
     {
         
@@ -24,14 +30,26 @@ public class magazinecontroll : MonoBehaviour
 	}
 	public void buttonAbilities()
 	{
-		Application.LoadLevel("Abilities_magazine");
+		RawImAbilities.SetActive(true);
+	}
+	public void buttonExit_abilities()
+	{
+		RawImAbilities.SetActive(false);
 	}
 	public void buttonOther()
 	{
-		Application.LoadLevel("Other_magazine");
+		RawImOther.SetActive(true);
+	}
+	public void buttonExit_other()
+	{
+		RawImOther.SetActive(false);
 	}
 	public void buttonGuns()
 	{
-		Application.LoadLevel("Guns_magazine");
+		RawImGuns.SetActive (true);
+	}
+	public void buttonExit_guns()
+	{
+		RawImGuns.SetActive (false);
 	}
 }
